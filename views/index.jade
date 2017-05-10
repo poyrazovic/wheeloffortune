@@ -1,0 +1,38 @@
+extends layout
+
+block content
+
+    .container-fluid
+        .row
+            nav.col-sm-3.col-md-2
+                ul.nav.nav-pills.flex-column
+                    li.nav-item
+                        a.nav-link.active(href='#')
+                            | Overview
+                            span.sr-only (current)
+                    li.nav-item
+                        a.nav-link(href='#') Reports
+                    li.nav-item
+                        a.nav-link(href='#') Analytics
+                    li.nav-item
+                        a.nav-link(href='#') Export
+                ul.nav.nav-pills.flex-column
+                    li.nav-item
+                        a.nav-link(href='#') Nav item
+                    li.nav-item
+                        a.nav-link(href='#') Nav item again
+                    li.nav-item
+                        a.nav-link(href='#') One more nav
+                    li.nav-item
+                        a.nav-link(href='#') Another nav item
+                ul.nav.nav-pills.flex-column
+                    li.nav-item
+                        a.nav-link(href='#') Nav item again
+                    li.nav-item
+                        a.nav-link(href='#') One more nav
+                    li.nav-item
+                        a.nav-link(href='#') Another nav item
+            main.col-sm-9.col-md-10
+                h1 Dashboard
+                .wheel-of-fortune-wrapper
+                    canvas#wheel-of-fortune.wheel-of-fortune

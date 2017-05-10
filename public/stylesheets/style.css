@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.wheel-of-fortune-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel-of-fortune {
+  width: 500px;
+  height: 500px;
+}
