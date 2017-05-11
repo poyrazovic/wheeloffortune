@@ -4,35 +4,51 @@ block content
 
     .container-fluid
         .row
-            nav.col-sm-3.col-md-2
-                ul.nav.nav-pills.flex-column
-                    li.nav-item
-                        a.nav-link.active(href='#')
-                            | Overview
-                            span.sr-only (current)
-                    li.nav-item
-                        a.nav-link(href='#') Reports
-                    li.nav-item
-                        a.nav-link(href='#') Analytics
-                    li.nav-item
-                        a.nav-link(href='#') Export
-                ul.nav.nav-pills.flex-column
-                    li.nav-item
-                        a.nav-link(href='#') Nav item
-                    li.nav-item
-                        a.nav-link(href='#') Nav item again
-                    li.nav-item
-                        a.nav-link(href='#') One more nav
-                    li.nav-item
-                        a.nav-link(href='#') Another nav item
-                ul.nav.nav-pills.flex-column
-                    li.nav-item
-                        a.nav-link(href='#') Nav item again
-                    li.nav-item
-                        a.nav-link(href='#') One more nav
-                    li.nav-item
-                        a.nav-link(href='#') Another nav item
-            main.col-sm-9.col-md-10
-                h1 Dashboard
+            .col-sm-4
+                #accordion(role='tablist', aria-multiselectable='true')
+                    .card
+                        #headingOne.card-header(role='tab')
+                            h5.mb-0
+                                a(data-toggle='collapse', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                                    | Person List
+                        #collapseOne.collapse.show(role='tabpanel', aria-labelledby='headingOne')
+                            .card-block
+                                nav
+                                    ul#person-list
+                    .card
+                        #headingTwo.card-header(role='tab')
+                            h5.mb-0
+                                a(data-toggle='collapse', href='#collapseTwo', aria-expanded='true', aria-controls='collapseTwo')
+                                    | Shot List
+                        #collapseTwo.collapse.show(role='tabpanel', aria-labelledby='headingTwo')
+                            .card-block
+                                nav
+                                    ul#shot-list
+
+            main.col-sm-8
+                h1 Wheel Of Fortune
+                .date
+                button#start.btn.btn-primary Start
                 .wheel-of-fortune-wrapper
-                    canvas#wheel-of-fortune.wheel-of-fortune
+                    canvas#wheel-of-fortune.wheel-of-fortune(width="500" height="500")
+    #addPerson.modal.fade
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    h5.modal-title Add Person
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                .modal-body
+                    form#addPersonForm
+                        .form-group
+                            input#addPersonName.form-control(placeholder='Name')
+                        .form-group
+                            input#addPersonColor.form-control(placeholder='Color')
+                            small.form-text.text-muted Bkz: pink, #9400D3, #7900af, #4B0082, #0000FF, #00FF00, #FFFF00, #bfbf00, #FF7F00, #bb5e00, #FF0000
+                        .form-group(style="text-align: center;")
+                            img#img(style="max-width: 200px; max-height:200px; width: auto; height: auto;margin-bottom: 15px;")
+                            input#addPersonFile.form-control(placeholder='File' type="file")
+                            #b64(style="display:none;")
+                .modal-footer
+                    button#addPersonButton.btn.btn-primary Submit
+    #bhenav BHENAV
